@@ -39,39 +39,6 @@ const UserSchema = new mongoose.Schema({
       ref: 'Schedule',
     },
   ],
-  category: {
-    type: String, // Категория: A/B/C
-    required: false,
-  },
-  course: {
-    type: String, // Название курса или код курса
-    required: false,
-  },
-  coursePrice: {
-    type: mongoose.Schema.Types.Number, // Цена курса
-    required: false,
-    default: 0,
-  },
-  additionalPracticeFees: {
-    type: mongoose.Schema.Types.Number, // Дополнительные платежи за практику
-    required: false,
-    default: 0,
-  },
-  payments: {
-    type: mongoose.Schema.Types.Number, // Выплаты
-    required: false,
-    default: 0,
-  },
-  amountDue: {
-    type: mongoose.Schema.Types.Number, // Надо доплатить
-    required: false,
-    default: 0,
-  },
-  instructor: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User', // Ссылка на инструктора
-    required: false,
-  },
 });
 
 module.exports = mongoose.model('User', UserSchema);

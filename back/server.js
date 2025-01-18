@@ -6,6 +6,7 @@ const MongoStore = require('connect-mongo');
 const cors = require('cors');
 const path = require('path');
 const nodemailer = require('nodemailer'); // Для отправки email
+const jwt = require('jsonwebtoken');
 
 // Подключение к базе данных MongoDB
 mongoose
@@ -110,6 +111,26 @@ app.post('/api/auth/forgot-password', async (req, res) => {
     console.error('Error in forgot-password route:', error);
     res.status(500).json({ message: 'Error sending password email' });
   }
+});
+app.get('/api/user', (req, res) => {
+  const token = req.headers['authorization']?.split(' ')[1];  // Извлекаем токен из заголовка
+
+  if (!token) {
+      return res.status(401).send('Token is missing');
+  }
+
+  jwt.verify(token, 'secret-key', (err, decoded) => {
+      if (err) {
+          return res.status(401).send('Invalid token');
+      }
+
+      // Возвращаем данные пользователя
+      res.json({
+          name: decoded.name,
+          surname: decoded.surname,
+          role: decoded.role,
+      });
+  });
 });
 
 

@@ -29,6 +29,7 @@ router.post(
   [
     body('email').isEmail().withMessage('Email is invalid'),
     body('name').notEmpty().withMessage('Name is required'),
+    body('surname').notEmpty().withMessage('Surname is required'),
     body('password').isLength({ min: 3 }).withMessage('Password must be at least 3 characters long'),
     body('role').isIn(['student', 'instructor', 'admin']).withMessage('Invalid role'),
   ],
@@ -38,7 +39,7 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { email, name, role } = req.body;
+    const { email, name, surname, role } = req.body;
     const userDB = await User.findOne({ email });
     if (userDB) {
       return res.status(400).json({ msg: 'User already exists' });
@@ -46,7 +47,7 @@ router.post(
 
     const password = hashPassword(req.body.password);
     try {
-      const newUser = await User.create({ email, name, password, role });
+      const newUser = await User.create({ email, name, surname, password, role });
       res.status(201).json(newUser);
     } catch (error) {
       console.error('Error creating user:', error);

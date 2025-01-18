@@ -1,0 +1,138 @@
+/* Импорт шрифта Onest */
+@font-face {
+    font-family: 'Onest';
+    src: url('fonts/Onest.woff2') format('woff2'),
+    url('fonts/Onest.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Сброс стилей и общие настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Onest', sans-serif;
+    background: #f9f9f9;
+    color: #000;
+    padding: 20px;
+}
+
+/* Стили для заголовка */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header-title {
+    color: #282828;
+    font-size: 47px;
+    font-weight: 900;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+
+.header-subtitle {
+    color: #000;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: normal;
+}
+
+/* Стили для блока изображений */
+.images {
+    display: flex;
+    justify-content: center; /* Центрируем изображения по горизонтали */
+    align-items: center; /* Выровняем по вертикали */
+    margin-bottom: 50px; /* Добавим отступ снизу */
+    margin-top: 150px; /* Добавим отступ снизу */
+
+}
+
+/* Стили для первого изображения */
+.images img:first-child {
+    width: 710px;
+    height: 739px;
+    flex-shrink: 0;
+    position: absolute; /* Абсолютное позиционирование */
+    left: 50px; /* Сдвиг вправо */
+    margin-top: -200px;
+    margin-left: 200px;
+
+}
+
+/* Стили для второго изображения */
+.images img:nth-child(2) {
+    width: 917px;
+    height: 878px;
+    flex-shrink: 0;
+    position: absolute; /* Относительное позиционирование */
+    z-index: 10; /* Выдвигаем на передний план */
+    margin: 0 auto; /* Центрируем по оси X */
+}
+
+/* Стили для третьего изображения */
+.images img:last-child {
+    width: 620px;
+    height: 596px;
+    flex-shrink: 0;
+    margin-left: 730px;
+    margin-top: -140px;
+}
+
+/* Стили для блока услуг */
+.services {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.service {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1371px; /* Фиксированная ширина */
+    height: 70px; /* Фиксированная высота */
+    flex-shrink: 0;
+    border-radius: 21px; /* Скругленные углы */
+    border: 3px solid #FF8000; /* Оранжевая обводка */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); /* Тень */
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #fff; /* Белый фон */
+}
+
+/* Контейнер для иконки и текста услуги */
+.service-info {
+    display: flex;
+    align-items: center;
+}
+
+.service-info svg {
+    margin-right: 10px;
+}
+
+/* Стили для текста внутри услуги */
+.label {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
+    color: rgba(0, 0, 0, 0.69);
+    margin: 5px 0;
+}
+
+/* Стили для кнопки с иконкой */
+.service button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.service-details {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}

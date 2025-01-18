@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konto-rejestracja</title>
+    <link rel="stylesheet" href="rejestr.css">
+</head>
+<body>
+<div class="container">
+    <!-- White Background Section -->
+    <div class="content-box">
+        <!-- Registration Section -->
+        <div class="register-section">
+            <h1>Sign Up!</h1>
+            <p>Create an account:</p>
+            <form action="#" method="POST" class="register-form">
+                <label for="register-name">Name</label>
+                <input type="text" id="register-name" name="name" placeholder="Your full name" required>
+
+                <label for="register-email">Email</label>
+                <input type="email" id="register-email" name="email" placeholder="example@email.com" required>
+
+                <label for="register-password">Password</label>
+                <input type="password" id="register-password" name="password" placeholder="At least 8 characters" required>
+
+                <label for="repeat-password">Repeat your password</label>
+                <input type="password" id="repeat-password" name="repeatpassword" placeholder="Repeat your password" required>
+
+                <label for="register-role">Role</label>
+                <select id="register-role" name="role" required>
+                    <option value="student">Student</option>
+                    <option value="instruktor">Instruktor</option>
+                    <option value="administrator">Administrator</option>
+                </select>
+
+                <button type="submit" class="btn-signup">Sign up</button>
+            </form>
+
+            <p class="signin-link">Already have an account? <a href="log.html">Sign in</a></p>
+        </div>
+
+        <!-- Image Section -->
+        <div class="image-section">
+            <img src="car.png" alt="Car Key" class="main-image">
+        </div>
+    </div>
+</div>
+<script src="rejestr.js"></script>
+</body>
+</html>

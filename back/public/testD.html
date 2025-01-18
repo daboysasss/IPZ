@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exam Test</title>
+  <link rel="stylesheet" href="testD.css">
+
+</head>
+<body>
+<div class="container">
+  <!-- Back Button -->
+  <a href="testD.html" id="back-button" class="back-button">
+    <img src="back.png" draggable="false" alt="Account">
+  </a>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+
+    // Set initial theme based on localStorage
+    const savedTheme = localStorage.getItem('theme') || 'light-theme';
+    body.className = savedTheme;
+    themeToggle.textContent = savedTheme === 'dark-theme' ? '🌙' : '☀️';
+
+    // Add event listener for theme toggle
+    themeToggle.addEventListener("click", () => {
+      body.classList.toggle("dark-theme");
+      body.classList.toggle("light-theme");
+
+      // Update button text
+      themeToggle.textContent = body.classList.contains("dark-theme") ? "🌙" : "☀️";
+
+      // Save current theme to localStorage
+      const currentTheme = body.classList.contains("dark-theme") ? "dark-theme" : "light-theme";
+      localStorage.setItem('theme', currentTheme);
+    });
+  </script>
+  <!-- Question 1 -->
+  <div class="question">
+    <h3>Pytanie 1: Jakie jest minimalne wymagane prawo jazdy do kierowania autobusem?</h3>
+    <div class="options">
+      <div class="option" data-correct="false"><p>A) Kategoria B</p></div>
+      <div class="option" data-correct="false"><p>B) Kategoria C</p></div>
+      <div class="option" data-correct="true"><p>C) Kategoria D</p></div>
+      <div class="option" data-correct="false"><p>D) Kategoria T</p></div>
+    </div>
+    <div class="explanation" style="display: none;">
+      <p><strong>Wyjaśnienie:</strong> Kategoria D uprawnia do prowadzenia pojazdów przeznaczonych do przewozu więcej niż 8 pasażerów oprócz kierowcy, czyli autobusów.</p>
+    </div>
+  </div>
+
+  <!-- Question 2 -->
+  <div class="question">
+    <h3>Pytanie 2: Jaki jest maksymalny dopuszczalny czas jazdy bez przerwy dla kierowcy autobusu?</h3>
+    <div class="options">
+      <div class="option" data-correct="false"><p>A) 2 godziny</p></div>
+      <div class="option" data-correct="false"><p>B) 4 godziny</p></div>
+      <div class="option" data-correct="true"><p>C) 4 godziny i 30 minut</p></div>
+      <div class="option" data-correct="false"><p>D) 6 godzin</p></div>
+    </div>
+    <div class="explanation" style="display: none;">
+      <p><strong>Wyjaśnienie:</strong> Zgodnie z przepisami dotyczącymi czasu pracy kierowców, maksymalny czas jazdy bez przerwy wynosi 4 godziny i 30 minut. Po tym czasie kierowca musi zrobić przerwę trwającą co najmniej 45 minut.</p>
+    </div>
+  </div>
+
+  <!-- Question 3 -->
+  <div class="question">
+    <h3>Pytanie 3: Jaka jest minimalna wysokość pasażera siedzącego w foteliku w autobusie wyposażonym w pasy bezpieczeństwa?</h3>
+    <div class="options">
+      <div class="option" data-correct="false"><p>A) 100 cm</p></div>
+      <div class="option" data-correct="true"><p>B) 125 cm</p></div>
+      <div class="option" data-correct="false"><p>C) 135 cm</p></div>
+      <div class="option" data-correct="false"><p>D) 150 cm</p></div>
+    </div>
+    <div class="explanation" style="display: none;">
+      <p><strong>Wyjaśnienie:</strong> Dzieci o wzroście poniżej 135 cm muszą korzystać z odpowiednich fotelików lub urządzeń podtrzymujących, jeśli autobus jest wyposażony w pasy bezpieczeństwa.</p>
+    </div>
+  </div>
+
+
+
+  <!-- Question 4 -->
+  <div class="question">
+    <h3>Pytanie 4: Dzieci o wzroście poniżej 135 cm muszą korzystać z odpowiednich fotelików lub urządzeń podtrzymujących, jeśli autobus jest wyposażony w pasy bezpieczeństwa.</h3>
+    <div class="options">
+      <div class="option" data-correct="false"><p>A) Otworzyć wszystkie drzwi i natychmiast ruszyć.</p></div>
+      <div class="option" data-correct="false"><p>B) Zapewnić stabilne zatrzymanie autobusu i włączyć światła awaryjne.</p></div>
+      <div class="option" data-correct="true"><p>C) Zatrzymać autobus, otworzyć drzwi i upewnić się, że pasażerowie wsiadają lub wysiadają bezpiecznie</p></div>
+      <div class="option" data-correct="false"><p>D) Pozostawić silnik wyłączony na czas wsiadania.</p></div>
+    </div>
+    <div class="explanation" style="display: none;">
+      <p><strong>Wyjaśnienie:</strong> Bezpieczeństwo pasażerów podczas wsiadania i wysiadania jest priorytetem. Kierowca musi upewnić się, że przystanek jest bezpieczny i że wszystkie osoby wsiadające lub wysiadające są bezpieczne.</p>
+    </div>
+  </div>
+
+  <!-- Question 5 -->
+  <div class="question">
+    <h3>Pytanie 5: Jakie światła powinny być włączone w autobusie podczas postoju na przystanku w nocy?</h3>
+    <div class="options">
+      <div class="option" data-correct="false"><p>A) Światła awaryjne</p></div>
+      <div class="option" data-correct="true"><p>B) Światła pozycyjne</p></div>
+      <div class="option" data-correct="false"><p>C) Światła mijania</p></div>
+      <div class="option" data-correct="false"><p>D) Żadne</p></div>
+    </div>
+    <div class="explanation" style="display: none;">
+      <p><strong>Wyjaśnienie:</strong> Podczas postoju w warunkach niedostatecznej widoczności należy włączyć światła pozycyjne, aby autobus był widoczny dla innych uczestników ruchu.</p>
+    </div>
+  </div>
+
+  <!-- Question 6 -->
+  <div class="question">
+    <h3>Pytanie 6: Co należy zrobić w przypadku nagłego wypadku pasażera w autobusie?</h3>
+    <div class="options">
+      <div class="option" data-correct="false"><p>A) Kontynuować jazdę do najbliższego szpitala.</p></div>
+      <div class="option" data-correct="true"><p>B) Natychmiast zatrzymać autobus w bezpiecznym miejscu i udzielić pomocy.</p></div>
+      <div class="option" data-correct="false"><p>C) Wezwać pomoc medyczną bez zatrzymywania pojazdu.</p></div>
+      <div class="option" data-correct="false"><p>D) Poprosić innego pasażera o zajęcie się sytuacją.</p></div>
+    </div>
+    <div class="explanation" style="display: none;">
+      <p><strong>Wyjaśnienie:</strong> W przypadku nagłego wypadku kierowca ma obowiązek zatrzymać autobus w bezpiecznym miejscu i zapewnić pierwszą pomoc lub wezwać odpowiednie służby ratunkowe.</p>
+    </div>
+  </div>
+
+
+
+  <button class="submit-btn">Zapisz wynik</button>
+</div>
+<footer class="footer">
+  <div class="footer-content">
+    <div class="logo">
+      <img src="logofull.png" id="complete-logo" alt="Logo">
+      <h4>LeoDrive Nauka Jazdy</h4>
+      <p>Adres| 00-000 Szczecin</p>
+      <p>Informacja czynna w godzinach 11:00 - 16:00</p>
+      <p>ba53727@zut.edu.pl</p>
+      <p>Kontakt: +48 000 000 000</p>
+    </div>
+    <div class="stripe"></div>
+    <div class="footer-menu">
+      <h4>Linki</h4>
+      <ul>
+        <li><a href="index.html">Wypełnij formularz</a></li>
+      </ul>
+    </div>
+    <div class="footer-menu">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="#">Prawo jazdy</a></li>
+        <li><a href="#">Premium</a></li>
+        <li><a href="#">Planowanie jazd</a></li>
+        <li><a href="#">Cennik</a></li>
+        <li><a href="#">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-offer">
+      <h4>Oferta</h4>
+      <ul>
+        <li><a href="#">Szkolenia na samochód</a></li>
+        <li><a href="#">Szkolenia na motocykl</a></li>
+        <li><a href="#">Szkolenia na autobus</a></li>
+        <li><a href="#">Premium</a></li>
+        <li><a href="#">Instruktorzy</a></li>
+      </ul>
+    </div>
+    <div class="footer-info">
+      <h4>Informacje</h4>
+      <ul>
+        <li><a href="#">Dokumenty do pobrania</a></li>
+        <li><a href="#">Regulamin</a></li>
+        <li><a href="#">Polityka prywatności</a></li>
+      </ul>
+    </div>
+    <div class="stripe"></div>
+    <div class="footer-certificates">
+      <h4>Certyfikaty</h4>
+      <h1>*Certyfikat*</h1>
+      <h4>Deweloperzy:</h4>
+      <ul>
+        <li>ba53727@zut.edu.pl</li>
+        <li>sa52087@zut.edu.pl</li>
+        <li>ki53760@zut.edu.pl</li>
+        <li>sm53759@zut.edu.pl</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="testD.js"></script>
+</body>
+</html>

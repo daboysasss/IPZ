@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exam Test</title>
+    <link rel="stylesheet" href="testA.css">
+
+</head>
+<body>
+<div class="container">
+    <!-- Back Button -->
+    <a href="theory.html" id="back-button" class="back-button">
+        <img src="back.png" draggable="false" alt="Account">
+    </a>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        // Set initial theme based on localStorage
+        const savedTheme = localStorage.getItem('theme') || 'light-theme';
+        body.className = savedTheme;
+        themeToggle.textContent = savedTheme === 'dark-theme' ? '🌙' : '☀️';
+
+        // Add event listener for theme toggle
+        themeToggle.addEventListener("click", () => {
+            body.classList.toggle("dark-theme");
+            body.classList.toggle("light-theme");
+
+            // Update button text
+            themeToggle.textContent = body.classList.contains("dark-theme") ? "🌙" : "☀️";
+
+            // Save current theme to localStorage
+            const currentTheme = body.classList.contains("dark-theme") ? "dark-theme" : "light-theme";
+            localStorage.setItem('theme', currentTheme);
+        });
+    </script>
+    <!-- Question 1 -->
+    <div class="question">
+        <h3>Pytanie 1: Jaka jest maksymalna dopuszczalna prędkość motocykla na autostradzie w Polsce?</h3>
+        <div class="options">
+            <div class="option" data-correct="false"><p>A) 100 km/h</p></div>
+            <div class="option" data-correct="false"><p>B) 120 km/h</p></div>
+            <div class="option" data-correct="true"><p>C) 140 km/h</p></div>
+            <div class="option" data-correct="false"><p>D) 160 km/h</p></div>
+        </div>
+        <div class="explanation" style="display: none;">
+            <p><strong>Wyjaśnienie:</strong> Na autostradzie w Polsce motocykle mogą poruszać się z maksymalną prędkością 140 km/h, tak samo jak samochody osobowe.</p>
+        </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question">
+        <h3>Pytanie 2: Jak należy przewozić pasażera na motocyklu?</h3>
+        <div class="options">
+            <div class="option" data-correct="false"><p>A) Pasażer może siedzieć bokiem na motocyklu.</p></div>
+            <div class="option" data-correct="true"><p>B) Pasażer musi siedzieć przodem do kierunku jazdy, trzymając się uchwytów lub kierowcy.</p></div>
+            <div class="option" data-correct="false"><p>C) Pasażer nie musi używać kasku ochronnego.</p></div>
+            <div class="option" data-correct="false"><p>D) Pasażer może przewozić na kolanach dodatkowy bagaż.</p></div>
+        </div>
+        <div class="explanation" style="display: none;">
+            <p><strong>Wyjaśnienie:</strong> Przepisy wymagają, aby pasażer na motocyklu siedział przodem do kierunku jazdy i był odpowiednio zabezpieczony (np. trzymając się kierowcy lub uchwytów). Pasażer musi także nosić kask ochronny.</p>
+        </div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question">
+        <h3>Pytanie 3: Co oznacza nieprawidłowe ustawienie luzu na klamce sprzęgła motocykla?</h3>
+        <div class="options">
+            <div class="option" data-correct="false"><p>A) Zmniejszone zużycie paliwa.</p></div>
+            <div class="option" data-correct="true"><p>B) Problem z płynną zmianą biegów.</p></div>
+            <div class="option" data-correct="false"><p>C) Większą stabilność motocykla.</p></div>
+            <div class="option" data-correct="false"><p>D) Brak konieczności używania hamulców.</p></div>
+        </div>
+        <div class="explanation" style="display: none;">
+            <p><strong>Wyjaśnienie:</strong> Nieprawidłowy luz na klamce sprzęgła może powodować trudności z płynną zmianą biegów, co wpływa negatywnie na komfort i bezpieczeństwo jazdy.</p>
+        </div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question">
+        <h3>Pytanie 4: Jak należy się zachować podczas jazdy motocyklem w warunkach deszczowych?</h3>
+        <div class="options">
+            <div class="option" data-correct="false"><p>A) Przyspieszyć, aby jak najszybciej dotrzeć do celu.</p></div>
+            <div class="option" data-correct="true"><p>B) Zachować większy odstęp od innych pojazdów i unikać gwałtownych manewrów.</p></div>
+            <div class="option" data-correct="false"><p>C) Używać tylko tylnego hamulca.</p></div>
+            <div class="option" data-correct="false"><p>D) Jechać środkiem pasa, aby omijać kałuże.</p></div>
+        </div>
+        <div class="explanation" style="display: none;">
+            <p><strong>Wyjaśnienie:</strong> W czasie deszczu nawierzchnia jest śliska, co zmniejsza przyczepność. Należy zwiększyć odstęp od innych pojazdów, unikać gwałtownych hamowań i skrętów, aby zachować bezpieczeństwo.</p>
+        </div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question">
+        <h3>Pytanie 5: Jaki jest minimalny wiek wymagany do prowadzenia motocykla o pojemności powyżej 125 cm³</h3>
+        <div class="options">
+            <div class="option" data-correct="false"><p>A) 16 lat</p></div>
+            <div class="option" data-correct="false"><p>B) 18 lat</p></div>
+            <div class="option" data-correct="true"><p>C) 20 lat (po uzyskaniu 2-letniego doświadczenia w kategorii A2)</p></div>
+            <div class="option" data-correct="false"><p>D) 24 lata</p></div>
+        </div>
+        <div class="explanation" style="display: none;">
+            <p><strong>Wyjaśnienie:</strong> Minimalny wiek na kategorię A wynosi 24 lata, ale można uzyskać uprawnienia w wieku 20 lat, jeśli posiada się co najmniej 2-letnie doświadczenie z kategorią A2.</p>
+        </div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question">
+        <h3>Pytanie 6: Jak należy zabezpieczyć motocykl przed kradzieżą podczas postoju?</h3>
+        <div class="options">
+            <div class="option" data-correct="false"><p>A) Zostawić włączony silnik, aby szybciej odjechać w razie potrzeby.</p></div>
+            <div class="option" data-correct="true"><p>B) Użyć blokady kierownicy oraz opcjonalnie dodatkowego zabezpieczenia (np. łańcucha).</p></div>
+            <div class="option" data-correct="false"><p>C) Parkować wyłącznie w ustronnym miejscu.</p></div>
+            <div class="option" data-correct="false"><p>D) Ustawić motocykl tak, aby łatwo było go przestawić.</p></div>
+        </div>
+        <div class="explanation" style="display: none;">
+            <p><strong>Wyjaśnienie:</strong> Zabezpieczenie kierownicy i dodatkowe środki ochrony, takie jak łańcuchy czy blokady tarczy hamulcowej, zwiększają szanse na ochronę motocykla przed kradzieżą.</p>
+        </div>
+    </div>
+
+    <button class="submit-btn">Zapisz wynik</button>
+</div>
+<footer class="footer">
+    <div class="footer-content">
+        <div class="logo">
+            <img src="logofull.png" id="complete-logo" alt="Logo">
+            <h4>LeoDrive Nauka Jazdy</h4>
+            <p>Adres| 00-000 Szczecin</p>
+            <p>Informacja czynna w godzinach 11:00 - 16:00</p>
+            <p>ba53727@zut.edu.pl</p>
+            <p>Kontakt: +48 000 000 000</p>
+        </div>
+        <div class="stripe"></div>
+        <div class="footer-menu">
+            <h4>Problem ze stroną?</h4>
+            <ul>
+                <li><a href="index.html">Wypełnij formularz</a></li>
+            </ul>
+        </div>
+        <div class="footer-menu">
+            <h4>Menu</h4>
+            <ul>
+                <li><a href="#">Prawo jazdy</a></li>
+                <li><a href="#">Premium</a></li>
+                <li><a href="#">Planowanie jazd</a></li>
+                <li><a href="#">Cennik</a></li>
+                <li><a href="#">Kontakt</a></li>
+            </ul>
+        </div>
+        <div class="footer-offer">
+            <h4>Oferta</h4>
+            <ul>
+                <li><a href="#">Szkolenia na samochód</a></li>
+                <li><a href="#">Szkolenia na motocykl</a></li>
+                <li><a href="#">Szkolenia na autobus</a></li>
+                <li><a href="#">Premium</a></li>
+                <li><a href="#">Instruktorzy</a></li>
+            </ul>
+        </div>
+        <div class="footer-info">
+            <h4>Informacje</h4>
+            <ul>
+                <li><a href="#">Dokumenty do pobrania</a></li>
+                <li><a href="#">Regulamin</a></li>
+                <li><a href="#">Polityka prywatności</a></li>
+            </ul>
+        </div>
+        <div class="stripe"></div>
+        <div class="footer-certificates">
+            <h4>Certyfikaty</h4>
+            <h1>*Certyfikat*</h1>
+            <h4>Deweloperzy:</h4>
+            <ul>
+                <li>ba53727@zut.edu.pl</li>
+                <li>sa52087@zut.edu.pl</li>
+                <li>ki53760@zut.edu.pl</li>
+                <li>sm53759@zut.edu.pl</li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<script src="testA.css"></script>
+</body>
+</html></title>
+</head>
+<body>
+
+</body>
+</html>

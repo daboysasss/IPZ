@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 10px;
+}
+
+.header h1 {
+    font-size: 40px;
+    color: #333;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.buttons .btn {
+    padding: 8px 16px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.buttons .btn:hover {
+    background-color: #f0f0f0;
+}
+
+.buttons .dark {
+    background-color: #333;
+    color: white;
+}
+
+.buttons .orange {
+    background-color: #ff9e2c;
+    color: white;
+}
+
+.buttons .active {
+    background-color: #ff9e2c;
+    color: white;
+}
+
+.schedule {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.schedule th, .schedule td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.schedule th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.schedule .occupied {
+    background-color: #ff9e2c;
+    color: white;
+}
+
+.schedule td {
+    height: 60px;
+}
+
+.schedule td.empty {
+    background-color: #f9f9f9;
+}
+
+.orange-stripe {
+    background-color: #ff9e2c;
+    height: 3px;
+    margin-top: 20px;
+}
+
+/* Footer Styles */
+.footer {
+    background: #282828;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+#complete-logo {
+    height: 89px;
+    width: 87px;
+}
+
+.footer-content {
+    height: 247px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 12px;
+    padding: 0px 61px;
+}
+
+.footer-certificates h1 {
+    font-size: 32px;
+    color: #fff; /* Устанавливаем яркий белый цвет */
+    font-weight: bold; /* Делаем текст жирным */
+    opacity: 1; /* Убираем возможную тусклость */
+}
+
+.stripe {
+    width: 0px;
+    height: 259px;
+    border-left: 1px solid #4B4B4B;
+    margin-right: -50px;
+    margin-left: -50px;
+}
+
+.footer h4,
+p,
+li {
+    margin-bottom: 15px;
+}
+
+.footer ul li a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,233 @@
+/* General Reset */
+body, h1, h2, h3, ul, li, p, div, button, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body styling */
+body {
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Header styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+/* Back Button Styling */
+.back-button {
+    display: inline-block;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.back-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.back-icon:hover {
+    transform: scale(1.1);
+}
+
+.nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.nav-link.active {
+    color: #ff9800;
+}
+
+.logout {
+    color: #333;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.logout:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Main Content */
+.main-content {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.category-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.category-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 1px solid #ff9800;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #ff9800;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.category-btn:hover {
+    background-color: #ff9800;
+    color: #fff;
+}
+
+/* Test Section */
+.test-section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.progress-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    width: 100%; /* Take the full available width */
+    box-sizing: border-box;
+}
+
+.progress-card {
+    background-color: #fff;
+    border: 1px solid #ff9800;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    width: 30%;
+}
+
+.progress-card h3 {
+    margin-bottom: 10px;
+}
+
+.progress-circle {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #ff9800;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+/* Materials Section */
+.materials-section {
+    margin-top: 20px;
+}
+
+.materials-list {
+    list-style: none;
+}
+
+.material-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.material-btn {
+    background-color: #ff9800;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.material-btn:hover {
+    background-color: #e68900;
+}
+
+/* Footer Styles */
+.footer {
+    background: #282828;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+#complete-logo {
+    height: 89px;
+    width: 87px;
+}
+
+.footer-content {
+    height: 247px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 12px;
+    padding: 0px 61px;
+}
+
+.footer-certificates h1 {
+    font-size: 32px;
+    color: #fff; /* Устанавливаем яркий белый цвет */
+    font-weight: bold; /* Делаем текст жирным */
+    opacity: 1; /* Убираем возможную тусклость */
+}
+
+.stripe {
+    width: 0px;
+    height: 259px;
+    border-left: 1px solid #4B4B4B;
+    margin-right: -50px;
+    margin-left: -50px;
+}
+
+.footer h4,
+p,
+li {
+    margin-bottom: 15px;
+}
+
+.footer ul li a:hover {
+    text-decoration: underline;
+}

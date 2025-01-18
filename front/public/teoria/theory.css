@@ -123,9 +123,10 @@ h2 {
 
 .progress-cards {
     display: flex;
+    flex-direction: column; /* Расположение в столбик */
     gap: 20px;
-    justify-content: space-around;
-    width: 100%; /* Take the full available width */
+    align-items: flex-start; /* Выравнивание по левой стороне */
+    width: 100%;
     box-sizing: border-box;
 }
 
@@ -135,7 +136,7 @@ h2 {
     border-radius: 10px;
     text-align: center;
     padding: 20px;
-    width: 30%;
+    width: 30%; /* Возвращаем оригинальный размер */
 }
 
 .progress-card h3 {
@@ -171,20 +172,6 @@ h2 {
     border-bottom: 1px solid #ccc;
 }
 
-.material-btn {
-    background-color: #ff9800;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-.material-btn:hover {
-    background-color: #e68900;
-}
-
 /* Footer Styles */
 .footer {
     background: #282828;
@@ -198,7 +185,6 @@ h2 {
 }
 
 .footer-content {
-    height: 247px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -209,9 +195,9 @@ h2 {
 
 .footer-certificates h1 {
     font-size: 32px;
-    color: #fff; /* Устанавливаем яркий белый цвет */
-    font-weight: bold; /* Делаем текст жирным */
-    opacity: 1; /* Убираем возможную тусклость */
+    color: #fff;
+    font-weight: bold;
+    opacity: 1;
 }
 
 .stripe {
@@ -222,12 +208,25 @@ h2 {
     margin-left: -50px;
 }
 
-.footer h4,
-p,
-li {
+.footer h4, p, li {
     margin-bottom: 15px;
 }
 
 .footer ul li a:hover {
     text-decoration: underline;
 }
+
+.test-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.large-block {
+    width: 4px;
+    height: 519px;
+    border-radius: 8px;
+    border: 1px solid #FF8000;
+    background: #FFF;
+}
+

@@ -8,6 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const detailsContainer = document.createElement('div');
         detailsContainer.classList.add('service-details');
         detailsContainer.style.display = 'none'; // Скрываем по умолчанию
+        detailsContainer.style.opacity = '0';
+        detailsContainer.style.transition = 'opacity 0.3s ease, max-height 0.3s ease';
+        detailsContainer.style.maxHeight = '0';
+        detailsContainer.style.overflow = 'hidden';
 
         // Данные для категорий (добавляем данные для каждого индекса)
         if (index === 0) { // Категория B | BE
@@ -76,7 +80,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         toggleButton.addEventListener('click', () => {
             const isVisible = detailsContainer.style.display === 'block';
-            detailsContainer.style.display = isVisible ? 'none' : 'block';
+
+            if (isVisible) {
+                detailsContainer.style.opacity = '0';
+                detailsContainer.style.maxHeight = '0';
+                setTimeout(() => {
+                    detailsContainer.style.display = 'none';
+                }, 300);
+            } else {
+                detailsContainer.style.display = 'block';
+                setTimeout(() => {
+                    detailsContainer.style.opacity = '1';
+                    detailsContainer.style.maxHeight = detailsContainer.scrollHeight + 'px';
+                }, 10);
+            }
 
             // Меняем иконку на стрелке (вправо или вниз)
             const svgPath = toggleButton.querySelector('path');

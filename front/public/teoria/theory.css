@@ -28,24 +28,6 @@ body {
     width: auto;
 }
 
-/* Back Button Styling */
-.back-button {
-    display: inline-block;
-    margin-right: 20px;
-    text-decoration: none;
-}
-
-.back-icon {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.back-icon:hover {
-    transform: scale(1.1);
-}
-
 .nav {
     display: flex;
     gap: 15px;
@@ -121,13 +103,20 @@ h2 {
     margin-bottom: 15px;
 }
 
+.test-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+
 .progress-cards {
     display: flex;
     flex-direction: column; /* Расположение в столбик */
     gap: 20px;
     align-items: flex-start; /* Выравнивание по левой стороне */
-    width: 100%;
-    box-sizing: border-box;
+    flex-shrink: 0;
 }
 
 .progress-card {
@@ -136,7 +125,8 @@ h2 {
     border-radius: 10px;
     text-align: center;
     padding: 20px;
-    width: 30%; /* Возвращаем оригинальный размер */
+    width: 500px; /* Фиксированная ширина карточек */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .progress-card h3 {
@@ -153,6 +143,16 @@ h2 {
     justify-content: center;
     font-size: 1em;
     font-weight: bold;
+}
+
+.info-section {
+    background-color: #fff; /* Белый фон */
+    border: 1px solid #ff9800; /* Оранжевая обводка */
+    border-radius: 10px; /* Закругленные углы */
+    padding: 260px; /* Отступы внутри */
+    width: 100%; /* Ширина секции */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    flex-grow: 1; /* Заполнение оставшегося пространства */
 }
 
 /* Materials Section */
@@ -185,6 +185,7 @@ h2 {
 }
 
 .footer-content {
+    height: 247px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -195,9 +196,9 @@ h2 {
 
 .footer-certificates h1 {
     font-size: 32px;
-    color: #fff;
-    font-weight: bold;
-    opacity: 1;
+    color: #fff; /* Устанавливаем яркий белый цвет */
+    font-weight: bold; /* Делаем текст жирным */
+    opacity: 1; /* Убираем возможную тусклость */
 }
 
 .stripe {
@@ -208,25 +209,12 @@ h2 {
     margin-left: -50px;
 }
 
-.footer h4, p, li {
+.footer h4,
+p,
+li {
     margin-bottom: 15px;
 }
 
 .footer ul li a:hover {
     text-decoration: underline;
 }
-
-.test-container {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-}
-
-.large-block {
-    width: 4px;
-    height: 519px;
-    border-radius: 8px;
-    border: 1px solid #FF8000;
-    background: #FFF;
-}
-

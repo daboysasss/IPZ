@@ -1,0 +1,183 @@
+/* Сброс стилей и общие настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Onest', sans-serif;
+    background: #f9f9f9;
+    color: #000;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Стили для заголовка */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header-title {
+    color: #282828;
+    font-size: 47px;
+    font-weight: 900;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+
+.header-subtitle {
+    color: #000;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: normal;
+}
+.images {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-bottom: 50px;
+    margin-top: 150px; 
+
+}
+
+.images img:first-child {
+    width: 710px;
+    height: 739px;
+    flex-shrink: 0;
+    position: absolute;
+    left: 50px;
+    margin-top: -200px;
+    margin-left: 5px;
+
+}
+
+.images img:nth-child(2) {
+    width: 917px;
+    height: 878px;
+    flex-shrink: 0;
+    position: absolute;
+    z-index: 10; 
+    margin: 0 auto; 
+}
+
+.images img:last-child {
+    width: 620px;
+    height: 596px;
+    flex-shrink: 0;
+    margin-left: 730px;
+    margin-top: -140px;
+}
+
+
+
+/* Стили для блока услуг */
+.services {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.service {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1371px; /* Фиксированная ширина */
+    height: 70px; /* Фиксированная высота */
+    flex-shrink: 0;
+    border-radius: 21px; /* Скругленные углы */
+    border: 3px solid #FF8000; /* Оранжевая обводка */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); /* Тень */
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #fff; /* Белый фон */
+}
+
+/* Контейнер для иконки и текста услуги */
+.service-info {
+    display: flex;
+    align-items: center;
+}
+
+.service-info svg {
+    margin-right: 10px;
+}
+
+/* Стили для текста внутри услуги */
+.label {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
+    color: rgba(0, 0, 0, 0.69);
+    margin: 5px 0;
+}
+
+/* Стили для кнопки с иконкой */
+.service button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.service-details {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Footer Styles */
+.footer {
+    background: #282828;
+    color: #fff;
+    padding: 40px 20px;
+    width: 100%;
+}
+
+#complete-logo {
+    height: 89px;
+    width: 87px;
+}
+
+.footer-content {
+    height: 247px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 12px;
+    padding: 0px 61px;
+}
+
+.footer-certificates h1 {
+    font-size: 32px;
+    color: #fff; /* Устанавливаем яркий белый цвет */
+    font-weight: bold; /* Делаем текст жирным */
+    opacity: 1; /* Убираем возможную тусклость */
+}
+
+.stripe {
+    width: 0px;
+    height: 259px;
+    border-left: 1px solid #4B4B4B;
+    margin-right: -50px;
+    margin-left: -50px;
+}
+
+.footer h4,
+p,
+li {
+    margin-bottom: 15px;
+}
+
+.footer ul li a:hover {
+    text-decoration: underline;
+}

@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Данные для категорий (добавляем данные для каждого индекса)
         if (index === 0) { // Категория B | BE
             detailsContainer.innerHTML = `
-                <div style="border: 3px solid #FF8000; border-radius: 21px; margin-top: 10px; padding: 10px; background: #fff;">
+                <div style="border: 3px solid #FF8000; border-radius: 21px; margin-top: 10px; padding: 10px; background: #fff; width: 1371px; margin-bottom: 15px;">
                     <ul style="list-style-type: disc; padding-left: 20px;">
                         <li><a href="https://forms.gle/WjQmXrmKEJwcvp9dA" target="_blank">Kurs kat. B - bez teorii: <span style="color: orange;">3350 PLN</span></a></li>
                         <li><a href="https://forms.gle/WjQmXrmKEJwcvp9dA" target="_blank">Kurs kat. B - stacjonarny: <span style="color: orange;">3650 PLN</span></a></li>
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         } else if (index === 1) { // Категория A | A2 | A1 | AM
             detailsContainer.innerHTML = `
-                <div style="border: 3px solid #FF8000; border-radius: 21px; margin-top: 10px; padding: 10px; background: #fff;">
+                <div style="border: 3px solid #FF8000; border-radius: 21px; margin-top: 10px; padding: 10px; background: #fff; width: 1371px; margin-bottom: 15px;">
                     <ul style="list-style-type: disc; padding-left: 20px;">
                         <li><a href="https://forms.gle/WjQmXrmKEJwcvp9dA" target="_blank">Kurs kat. A - bez teorii: <span style="color: orange;">3290 PLN</span></a></li>
                         <li><a href="https://forms.gle/WjQmXrmKEJwcvp9dA" target="_blank">Kurs kat. A - indywidualny: <span style="color: orange;">3990 PLN</span></a></li>
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         } else if (index === 2) { // Категория D | DE
             detailsContainer.innerHTML = `
-                <div style="border: 3px solid #FF8000; border-radius: 21px; margin-top: 10px; padding: 10px; background: #fff;">
+                <div style="border: 3px solid #FF8000; border-radius: 21px; margin-top: 10px; padding: 10px; background: #fff; width: 1371px; margin-bottom: 15px;">
                     <ul style="list-style-type: disc; padding-left: 20px;">
                         <li><a href="https://forms.gle/WjQmXrmKEJwcvp9dA" target="_blank">Kurs kat. D po B - bez teorii: <span style="color: orange;">8080 PLN</span></a></li>
                         <li><a href="https://forms.gle/WjQmXrmKEJwcvp9dA" target="_blank">Kurs kat. D po B - standardowy: <span style="color: orange;">8280 PLN</span></a></li>
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         } else if (index === 3) { // Категория Premium
             detailsContainer.innerHTML = `
-                <div style="border: 3px solid #FF8000; border-radius: 21px; margin-top: 10px; padding: 10px; background: #fff;">
+                <div style="border: 3px solid #FF8000; border-radius: 21px; margin-top: 10px; padding: 10px; background: #fff; width: 1371px; margin-bottom: 15px;">
                     <ul style="list-style-type: disc; padding-left: 20px;">
                         <li><a href="https://forms.gle/WjQmXrmKEJwcvp9dA" target="_blank">Kurs Premium: <span style="color: orange;">4000 PLN</span></a></li>
                     </ul>
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         } else if (index === 4) { // Инструктор
             detailsContainer.innerHTML = `
-                <div style="border: 3px solid #FF8000; border-radius: 21px; margin-top: 10px; padding: 10px; background: #fff;">
+                <div style="border: 3px solid #FF8000; border-radius: 21px; margin-top: 10px; padding: 10px; background: #fff; width: 1371px; margin-bottom: 15px;">
                     <ul style="list-style-type: disc; padding-left: 20px;">
                         <li><a href="https://forms.gle/WjQmXrmKEJwcvp9dA" target="_blank">Instruktor nauki jazdy kat. A - kurs online: <span style="color: orange;">4200 PLN</span></a></li>
                         <li><a href="https://forms.gle/WjQmXrmKEJwcvp9dA" target="_blank">Instruktor nauki jazdy kat. B - kurs online: <span style="color: orange;">4200 PLN</span></a></li>

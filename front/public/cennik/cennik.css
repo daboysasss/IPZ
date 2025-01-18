@@ -41,40 +41,35 @@ header {
     font-weight: 700;
     line-height: normal;
 }
-
-/* Стили для блока изображений */
 .images {
     display: flex;
-    justify-content: center; /* Центрируем изображения по горизонтали */
-    align-items: center; /* Выровняем по вертикали */
-    margin-bottom: 50px; /* Добавим отступ снизу */
-    margin-top: 150px; /* Добавим отступ снизу */
+    justify-content: center;
+    align-items: center; 
+    margin-bottom: 50px;
+    margin-top: 150px; 
 
 }
 
-/* Стили для первого изображения */
 .images img:first-child {
     width: 710px;
     height: 739px;
     flex-shrink: 0;
-    position: absolute; /* Абсолютное позиционирование */
-    left: 50px; /* Сдвиг вправо */
+    position: absolute;
+    left: 50px;
     margin-top: -200px;
-    margin-left: 200px;
+    margin-left: 5px;
 
 }
 
-/* Стили для второго изображения */
 .images img:nth-child(2) {
     width: 917px;
     height: 878px;
     flex-shrink: 0;
-    position: absolute; /* Относительное позиционирование */
-    z-index: 10; /* Выдвигаем на передний план */
-    margin: 0 auto; /* Центрируем по оси X */
+    position: absolute;
+    z-index: 10; 
+    margin: 0 auto; 
 }
 
-/* Стили для третьего изображения */
 .images img:last-child {
     width: 620px;
     height: 596px;
@@ -82,6 +77,8 @@ header {
     margin-left: 730px;
     margin-top: -140px;
 }
+
+
 
 /* Стили для блока услуг */
 .services {
@@ -142,6 +139,7 @@ header {
     background: #282828;
     color: #fff;
     padding: 40px 20px;
+    width: 100%;
 }
 
 #complete-logo {

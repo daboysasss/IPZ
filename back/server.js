@@ -112,6 +112,7 @@ app.post('/api/auth/forgot-password', async (req, res) => {
     res.status(500).json({ message: 'Error sending password email' });
   }
 });
+// Получение текущего пользователя
 app.get('/api/user', (req, res) => {
   const token = req.headers['authorization']?.split(' ')[1];  // Извлекаем токен из заголовка
 
@@ -119,19 +120,26 @@ app.get('/api/user', (req, res) => {
       return res.status(401).send('Token is missing');
   }
 
-  jwt.verify(token, 'secret-key', (err, decoded) => {
-      if (err) {
-          return res.status(401).send('Invalid token');
-      }
+  jwt.verify(token, 'aboba', (err, decoded) => {
+    if (err) {
+        console.error('Token verification failed:', err.message);
+        return res.status(401).json({ message: 'Invalid or expired token' });
+    }
 
-      // Возвращаем данные пользователя
-      res.json({
-          name: decoded.name,
-          surname: decoded.surname,
-          role: decoded.role,
-      });
+    // Проверка на наличие обязательных данных
+    if (!decoded.name || !decoded.surname || !decoded.role) {
+        return res.status(400).json({ message: 'Incomplete token data' });
+    }
+
+    // Возвращаем корректные данные пользователя
+    res.json({
+        firstName: decoded.name,
+        lastName: decoded.surname,
+        role: decoded.role,
+    });
   });
 });
+
 
 
 // Обработка ошибок

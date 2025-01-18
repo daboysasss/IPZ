@@ -6,6 +6,15 @@ body {
     background: #f0f0f0;
 }
 
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 /* Header styles */
 .header {
     background: linear-gradient(90deg, #FF7A00, #FF0000);
@@ -21,33 +30,32 @@ body {
     margin: 0 auto;
 }
 
-.logo {
-    height: 100px;
-    width: auto;
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px; /* Высота навбара */
+    background-color: #000; /* Цвет фона для контекста */
 }
 
 .nav {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+    gap: 80px;
     color: #fff;
     font-size: 16px;
 }
 
 .nav-link {
-    color: inherit; /* Наследует цвет из родительского элемента */
-    text-decoration: none; /* Убирает подчёркивание */
-    cursor: pointer; /* Указывает, что это кликабельный элемент */
+    cursor: pointer;
+    margin-right: 30px;
+    padding: 0 20px;
 }
 
 .nav-link:hover {
-    text-decoration: underline; /* Добавляет подчёркивание при наведении */
+    text-decoration: underline;
 }
 
-.logout {
-    font-size: 16px;
-    color: #fff;
-    cursor: pointer;
+.nav-link:last-child {
+    margin-right: 0;
 }
 
 /* Main content styles */
@@ -55,8 +63,6 @@ main {
     text-align: center;
     padding: 40px;
 }
-
-
 
 .avatar {
     height: 100px;

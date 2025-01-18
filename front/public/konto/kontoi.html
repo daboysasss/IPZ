@@ -12,9 +12,9 @@
     <div class="header-content">
         <img src="logo.png" alt="Logo" class="logo">
         <nav class="nav">
-            <a href="praktykas.html" class="nav-link">Zajęcia praktyczne</a>
+            <a href="praktyka.html" class="nav-link">Zajęcia praktyczne</a>
             <a href="theory.html" class="nav-link">Zajęcia teoretyczne</a>
-            <span class="logout">Log out</span>
+            <span class="logout" id="logout-btn">Log out</span> <!-- Добавлен id для кнопки выхода -->
         </nav>
     </div>
 </header>
@@ -23,20 +23,22 @@
 <main>
     <section class="info-section">
         <img src="ava.png" alt="User Avatar" class="avatar">
-        <h1 id="user-name">Name and Surname</h1>  <!-- Это будет динамически обновляться -->
-        <h2 id="user-role">Role in this perfomance</h2> <!-- Это будет динамически обновляться -->
+        <h1 id="user-name">Name and Surname</h1>  <!-- Будет динамически обновляться -->
+        <h2 id="user-role">Role in this performance</h2> <!-- Будет динамически обновляться -->
         <div class="info-box">
             <p><strong>Info:</strong></p>
-            <p>Kategoria: </p>
+            <p id="user-category">Kategoria: Not specified</p> <!-- Добавлен id для категории -->
         </div>
     </section>
 </main>
+
+<!-- Footer -->
 <footer class="footer">
     <div class="footer-content">
         <div class="logo">
             <img src="logofull.png" id="complete-logo" alt="Logo">
             <h4>LeoDrive Nauka Jazdy</h4>
-            <p>Adres| 00-000 Szczecin</p>
+            <p>Adres | 00-000 Szczecin</p>
             <p>Informacja czynna w godzinach 11:00 - 16:00</p>
             <p>ba53727@zut.edu.pl</p>
             <p>Kontakt: +48 000 000 000</p>
@@ -45,7 +47,7 @@
         <div class="footer-menu">
             <h4>Linki</h4>
             <ul>
-                <li><a href="https://forms.gle/JZBGsN8evk8yTzax9">Wypełnij formularz</a></li>
+                <li><a href="index.html">Wypełnij formularz</a></li>
             </ul>
         </div>
         <div class="footer-menu">

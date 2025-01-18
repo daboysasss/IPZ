@@ -78,13 +78,24 @@ router.post(
 
     const isValid = comparePassword(password, userDB.password);
     if (isValid) {
-      const token = jwt.sign({ userId: userDB._id }, secret, { expiresIn: '24h' });
+      // Генерация токена с нужными данными
+      const token = jwt.sign(
+        {
+          userId: userDB._id,
+          name: userDB.name,
+          surname: userDB.surname,
+          role: userDB.role
+        },
+        secret, 
+        { expiresIn: '24h' }
+      );
       return res.json({ token, role: userDB.role });
     } else {
       return res.status(401).json({ message: 'Invalid password' });
     }
   }
 );
+
 
 // Логаут пользователя
 router.post('/logout', verifyToken, (req, res) => {

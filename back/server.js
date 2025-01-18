@@ -81,8 +81,8 @@ app.post('/api/auth/forgot-password', async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: 'Gmail', // Use Gmail as email service
       auth: {
-        user: process.env.EMAIL_USER || 'r2d2ivanuch@gmail.com',
-        pass: process.env.EMAIL_PASS || '201819Vk',
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
       },
       debug: true, // Enable debugging for the email sending process
       logger: true, // Enable logging for the email sending process

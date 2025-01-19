@@ -4,41 +4,38 @@ document.addEventListener('DOMContentLoaded', () => {
     loginForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const email = document.querySelector('#email').value;
-        const password = document.querySelector('#password').value;
+        const email = document.querySelector('#email').value.trim();
+        const password = document.querySelector('#password').value.trim();
 
         try {
             const response = await fetch('http://localhost:5000/api/auth/login', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password }),
             });
 
             if (!response.ok) {
                 const errorData = await response.json();
-                throw new Error(errorData.message || 'Login failed');
+                throw new Error(errorData.message || 'Ошибка входа');
             }
 
             const data = await response.json();
-            console.log('Login successful:', data);
-            console.log('User role:', data.role);  // Логируем роль
-
             localStorage.setItem('token', data.token);
 
+            // Извлечение userId из токена
+            const payload = JSON.parse(atob(data.token.split('.')[1])); // Декодируем токен
+            localStorage.setItem('userId', payload.userId); // Сохраняем userId в localStorage
+
+            console.log('Login successful, User ID:', payload.userId);
+
             // Перенаправление в зависимости от роли
-            if (data.role === 'student') {
-                console.log('Redirecting to student account...');
-                location.replace('kontos.html');  // Студенческий аккаунт
-            } else if (data.role === 'instructor') {
-                console.log('Redirecting to instructor account...');
-                location.replace('kontoi.html');  // Инструкторский аккаунт
+            if (payload.role === 'student') {
+                location.replace('kontos.html');
+            } else if (payload.role === 'instructor') {
+                location.replace('kontoi.html');
             } else {
                 alert('Unknown role');
             }
-
-            alert('Login successful!');
         } catch (error) {
             console.error('Error:', error.message);
             alert('Login failed: ' + error.message);

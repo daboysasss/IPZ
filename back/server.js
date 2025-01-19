@@ -39,7 +39,11 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: mongoStore,
-    cookie: { secure: false }, // Установите true, если используете HTTPS
+    cookie: {
+      secure: process.env.NODE_ENV === 'production', // Включите secure только в продакшене
+      httpOnly: true, // Куки недоступны JavaScript
+      maxAge: 24 * 60 * 60 * 1000, // 1 день
+    },
   })
 );
 
@@ -56,12 +60,14 @@ const userRoutes = require('./routes/userRoutes');
 const scheduleRoutes = require('./routes/scheduleRoutes');
 const ratingRoutes = require('./routes/ratingRoutes');
 const authRoutes = require('./routes/auth'); // Авторизационные маршруты
+const testResultRoutes = require('./routes/testresultRoutes'); 
 
 // Подключение маршрутов
 app.use('/api/users', userRoutes);
 app.use('/api/schedules', scheduleRoutes);
 app.use('/api/ratings', ratingRoutes);
 app.use('/api/auth', authRoutes); // Маршруты для авторизации
+app.use('/api/testResults', testResultRoutes);
 
 // --- Реализация маршрута для восстановления пароля ---
 app.post('/api/auth/forgot-password', async (req, res) => {
@@ -114,31 +120,51 @@ app.post('/api/auth/forgot-password', async (req, res) => {
 });
 // Получение текущего пользователя
 app.get('/api/user', (req, res) => {
-  const token = req.headers['authorization']?.split(' ')[1];  // Извлекаем токен из заголовка
+  const token = req.headers['authorization']?.split(' ')[1]; // Извлекаем токен из заголовка
 
   if (!token) {
-      return res.status(401).send('Token is missing');
+    return res.status(401).json({ message: 'Токен отсутствует' });
   }
 
-  jwt.verify(token, 'aboba', (err, decoded) => {
+  jwt.verify(token, process.env.SECRET || 'aboba', (err, decoded) => {
     if (err) {
-        console.error('Token verification failed:', err.message);
-        return res.status(401).json({ message: 'Invalid or expired token' });
+      console.error('Ошибка проверки токена:', err.message);
+      return res.status(401).json({ message: 'Недействительный или истёкший токен' });
     }
 
-    // Проверка на наличие обязательных данных
-    if (!decoded.name || !decoded.surname || !decoded.role) {
-        return res.status(400).json({ message: 'Incomplete token data' });
-    }
-
-    // Возвращаем корректные данные пользователя
     res.json({
-        firstName: decoded.name,
-        lastName: decoded.surname,
-        role: decoded.role,
+      userId: decoded.userId,
+      firstName: decoded.name,
+      lastName: decoded.surname,
+      role: decoded.role,
     });
   });
 });
+
+// API endpoint to save test result
+app.post('/api/testResult', (req, res) => {
+  const { userId, result, category } = req.body;  // Изменено на правильные названия полей
+
+  if (!userId || result === undefined || !category) {
+      return res.status(400).json({ success: false, message: 'Invalid data' });
+  }
+
+  const newTestResult = new TestResult({
+    user: userId,   // Ссылаемся на пользователя
+    result,         // Результат теста
+    category,       // Категория теста
+  });
+
+  newTestResult.save()
+      .then(() => {
+          res.json({ success: true, message: 'Test result saved' });
+      })
+      .catch(error => {
+          res.status(500).json({ success: false, message: 'Server error' });
+      });
+});
+
+
 
 
 

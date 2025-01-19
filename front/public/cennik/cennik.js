@@ -8,15 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const detailsContainer = document.createElement('div');
         detailsContainer.classList.add('service-details');
         detailsContainer.style.display = 'none'; // Скрываем по умолчанию
-        detailsContainer.style.opacity = '0';
-        detailsContainer.style.transition = 'opacity 0.3s ease, max-height 0.3s ease';
-        detailsContainer.style.maxHeight = '0';
-        detailsContainer.style.overflow = 'hidden';
 
         // Данные для категорий (добавляем данные для каждого индекса)
         if (index === 0) { // Категория B | BE
             detailsContainer.innerHTML = `
-                <div style="border: 3px solid #FF8000; border-radius: 21px; margin-top: 10px; padding: 10px; background: #fff; width: 1371px; margin-bottom: 15px;">
+                <div style="border: 3px solid #FF8000; border-radius: 21px; margin-top: 10px; padding: 10px; background: #fff;">
                     <ul style="list-style-type: disc; padding-left: 20px;">
                         <li><a href="https://forms.gle/WjQmXrmKEJwcvp9dA" target="_blank">Kurs kat. B - bez teorii: <span style="color: orange;">3350 PLN</span></a></li>
                         <li><a href="https://forms.gle/WjQmXrmKEJwcvp9dA" target="_blank">Kurs kat. B - stacjonarny: <span style="color: orange;">3650 PLN</span></a></li>
@@ -28,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         } else if (index === 1) { // Категория A | A2 | A1 | AM
             detailsContainer.innerHTML = `
-                <div style="border: 3px solid #FF8000; border-radius: 21px; margin-top: 10px; padding: 10px; background: #fff; width: 1371px; margin-bottom: 15px;">
+                <div style="border: 3px solid #FF8000; border-radius: 21px; margin-top: 10px; padding: 10px; background: #fff;">
                     <ul style="list-style-type: disc; padding-left: 20px;">
                         <li><a href="https://forms.gle/WjQmXrmKEJwcvp9dA" target="_blank">Kurs kat. A - bez teorii: <span style="color: orange;">3290 PLN</span></a></li>
                         <li><a href="https://forms.gle/WjQmXrmKEJwcvp9dA" target="_blank">Kurs kat. A - indywidualny: <span style="color: orange;">3990 PLN</span></a></li>
@@ -44,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         } else if (index === 2) { // Категория D | DE
             detailsContainer.innerHTML = `
-                <div style="border: 3px solid #FF8000; border-radius: 21px; margin-top: 10px; padding: 10px; background: #fff; width: 1371px; margin-bottom: 15px;">
+                <div style="border: 3px solid #FF8000; border-radius: 21px; margin-top: 10px; padding: 10px; background: #fff;">
                     <ul style="list-style-type: disc; padding-left: 20px;">
                         <li><a href="https://forms.gle/WjQmXrmKEJwcvp9dA" target="_blank">Kurs kat. D po B - bez teorii: <span style="color: orange;">8080 PLN</span></a></li>
                         <li><a href="https://forms.gle/WjQmXrmKEJwcvp9dA" target="_blank">Kurs kat. D po B - standardowy: <span style="color: orange;">8280 PLN</span></a></li>
@@ -55,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         } else if (index === 3) { // Категория Premium
             detailsContainer.innerHTML = `
-                <div style="border: 3px solid #FF8000; border-radius: 21px; margin-top: 10px; padding: 10px; background: #fff; width: 1371px; margin-bottom: 15px;">
+                <div style="border: 3px solid #FF8000; border-radius: 21px; margin-top: 10px; padding: 10px; background: #fff;">
                     <ul style="list-style-type: disc; padding-left: 20px;">
                         <li><a href="https://forms.gle/WjQmXrmKEJwcvp9dA" target="_blank">Kurs Premium: <span style="color: orange;">4000 PLN</span></a></li>
                     </ul>
@@ -63,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         } else if (index === 4) { // Инструктор
             detailsContainer.innerHTML = `
-                <div style="border: 3px solid #FF8000; border-radius: 21px; margin-top: 10px; padding: 10px; background: #fff; width: 1371px; margin-bottom: 15px;">
+                <div style="border: 3px solid #FF8000; border-radius: 21px; margin-top: 10px; padding: 10px; background: #fff;">
                     <ul style="list-style-type: disc; padding-left: 20px;">
                         <li><a href="https://forms.gle/WjQmXrmKEJwcvp9dA" target="_blank">Instruktor nauki jazdy kat. A - kurs online: <span style="color: orange;">4200 PLN</span></a></li>
                         <li><a href="https://forms.gle/WjQmXrmKEJwcvp9dA" target="_blank">Instruktor nauki jazdy kat. B - kurs online: <span style="color: orange;">4200 PLN</span></a></li>
@@ -80,20 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         toggleButton.addEventListener('click', () => {
             const isVisible = detailsContainer.style.display === 'block';
-
-            if (isVisible) {
-                detailsContainer.style.opacity = '0';
-                detailsContainer.style.maxHeight = '0';
-                setTimeout(() => {
-                    detailsContainer.style.display = 'none';
-                }, 300);
-            } else {
-                detailsContainer.style.display = 'block';
-                setTimeout(() => {
-                    detailsContainer.style.opacity = '1';
-                    detailsContainer.style.maxHeight = detailsContainer.scrollHeight + 'px';
-                }, 10);
-            }
+            detailsContainer.style.display = isVisible ? 'none' : 'block';
 
             // Меняем иконку на стрелке (вправо или вниз)
             const svgPath = toggleButton.querySelector('path');
@@ -103,5 +86,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 svgPath.setAttribute('d', 'M6 9l6 6 6-6'); // Вниз
             }
         });
+    });
+
+    // Реализация смены темы
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+
+    // Устанавливаем начальную тему из localStorage
+    const savedTheme = localStorage.getItem('theme') || 'light-theme';
+    body.className = savedTheme;
+    themeToggle.textContent = savedTheme === 'dark-theme' ? '🌙' : '☀️';
+
+    // Слушатель для смены темы
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-theme');
+        body.classList.toggle('light-theme');
+
+        themeToggle.textContent = body.classList.contains('dark-theme') ? '🌙' : '☀️';
+
+        // Сохраняем текущую тему в localStorage
+        const currentTheme = body.classList.contains('dark-theme') ? 'dark-theme' : 'light-theme';
+        localStorage.setItem('theme', currentTheme);
+
+
     });
 });

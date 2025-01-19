@@ -10,7 +10,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 90px; /* Высота шапки */
+    height: 80px; /* Высота шапки */
     z-index: 1000;
     border-bottom: 1px solid rgba(40, 40, 40, 0.60);
     background: #F0F0F0;

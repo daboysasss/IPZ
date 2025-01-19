@@ -218,3 +218,68 @@ li {
 .footer ul li a:hover {
     text-decoration: underline;
 }
+
+/* Кнопка переключения темы */
+#themeToggle {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#themeToggle:hover {
+    transform: scale(1.2);
+}
+
+/* Темная тема */
+body.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-theme .header {
+    background-color: #333333;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .nav-link {
+    color: #cccccc;
+}
+
+body.dark-theme .nav-link.active {
+    color: #ff9800;
+}
+
+body.dark-theme .logout {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+body.dark-theme .category-btn {
+    background-color: #333333;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+/* Темная тема - Сегменты */
+body.dark-theme .progress-card {
+    background-color: #1e1e1e;
+    border-color: #444444;
+    color: #ffffff;
+}
+
+body.dark-theme .info-section {
+    background-color: #1e1e1e;
+    border-color: #444444;
+    color: #ffffff;
+}
+
+
+body.dark-theme .footer {
+    background-color: #222222;
+    color: #bbbbbb;
+}

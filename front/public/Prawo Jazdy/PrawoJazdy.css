@@ -19,62 +19,94 @@ a {
     color: inherit;
 }
 
+/* Статичная шапка */
 .header {
-    box-sizing: border-box;
-    position: absolute;
-    width: 1011px;
-    height: 75px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Высота шапки */
+    z-index: 1000;
+    border-bottom: 1px solid rgba(40, 40, 40, 0.60);
     background: #F0F0F0;
-    border-width: 0 1px 1px 1px;
-    border-style: solid;
-    border-color: rgba(40, 40, 40, 0.6);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 0 0 30px 30px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 0 15px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 50px;
+    justify-content: space-between; /* Разделяем логотип и меню */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.navbar {
+/* Логотип */
+.logo {
     display: flex;
-    align-items: center;
-    gap: 90px;
+    flex-direction: column;
+    gap: 2px; /* Расстояние между LEO и DRIVE */
+    text-align: left;
 }
 
-.navbar ul {
+.leo {
+    color: #FFB60A;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #FFB60A;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.drive {
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+/* Меню */
+.nav-menu {
     display: flex;
-    gap: 90px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    justify-content: center; /* Центрируем кнопки */
+    gap: 80px; /* Расстояние между кнопками */
+    flex: 1; /* Распределяем пространство */
 }
 
-#logo {
-    width: 110px;
-    height: 59px;
-}
-
-#accont-icon{
-    width: 32px;
-    height: 32px;
-}
-
-
-.navbar ul #selected {
-    color: #C56302;
-}
-
-.navbar ul li a {
-    color: #333;
+.nav-link {
+    text-decoration: none;
+    color: #282828; /* Основной цвет текста */
+    font-family: 'Onest', sans-serif; /* Указанный шрифт */
+    font-size: 16px;
+    font-style: normal;
     font-weight: 500;
-    font-size: medium;
+    line-height: normal;
+    transition: color 0.3s ease; /* Плавное изменение цвета */
 }
 
-.navbar ul li:hover{
-    text-decoration: underline;
+/* Стили при наведении */
+.nav-link:hover {
+    color: #FFB60A; /* Цвет при наведении */
+}
+
+/* Стили при нажатии */
+.nav-link:active {
+    color: #C56302; /* Цвет текста при нажатии */
+}
+
+/* Медиазапросы для мобильных устройств */
+@media (max-width: 768px) {
+    .header {
+        height: 70px; /* Уменьшенная высота на мобильных устройствах */
+        padding: 0 10px;
+    }
+    .leo, .drive {
+        font-size: 20px; /* Уменьшенный размер текста */
+    }
+    .nav-menu {
+        gap: 20px; /* Меньшее расстояние между кнопками */
+    }
+    .nav-link {
+        font-size: 14px; /* Уменьшенный шрифт для кнопок */
+    }
 }
 
 

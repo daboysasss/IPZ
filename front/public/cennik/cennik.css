@@ -9,16 +9,7 @@ body {
     font-family: 'Onest', sans-serif;
     background: #f9f9f9;
     color: #000;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
+    padding: 20px;
 }
 
 /* Стили для заголовка */
@@ -41,35 +32,40 @@ header {
     font-weight: 700;
     line-height: normal;
 }
+
+/* Стили для блока изображений */
 .images {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
-    margin-top: 150px;
+    justify-content: center; /* Центрируем изображения по горизонтали */
+    align-items: center; /* Выровняем по вертикали */
+    margin-bottom: 50px; /* Добавим отступ снизу */
+    margin-top: 150px; /* Добавим отступ снизу */
 
 }
 
+/* Стили для первого изображения */
 .images img:first-child {
     width: 710px;
     height: 739px;
     flex-shrink: 0;
-    position: absolute;
-    left: 50px;
+    position: absolute; /* Абсолютное позиционирование */
+    left: 50px; /* Сдвиг вправо */
     margin-top: -200px;
-    margin-left: 5px;
+    margin-left: 200px;
 
 }
 
+/* Стили для второго изображения */
 .images img:nth-child(2) {
     width: 917px;
     height: 878px;
     flex-shrink: 0;
-    position: absolute;
-    z-index: 10;
-    margin: 0 auto;
+    position: absolute; /* Относительное позиционирование */
+    z-index: 10; /* Выдвигаем на передний план */
+    margin: 0 auto; /* Центрируем по оси X */
 }
 
+/* Стили для третьего изображения */
 .images img:last-child {
     width: 620px;
     height: 596px;
@@ -77,8 +73,6 @@ header {
     margin-left: 730px;
     margin-top: -140px;
 }
-
-
 
 /* Стили для блока услуг */
 .services {
@@ -139,7 +133,6 @@ header {
     background: #282828;
     color: #fff;
     padding: 40px 20px;
-    width: 100%;
 }
 
 #complete-logo {
@@ -180,4 +173,98 @@ li {
 
 .footer ul li a:hover {
     text-decoration: underline;
+}
+
+/* Кнопка переключения темы */
+#themeToggle {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#themeToggle:hover {
+    transform: scale(1.2);
+}
+
+/* Темная тема */
+body.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-theme .header {
+    background-color: #333333;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .nav-link {
+    color: #cccccc;
+}
+
+body.dark-theme .nav-link.active {
+    color: #ff9800;
+}
+
+body.dark-theme .logout {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+body.dark-theme .category-btn {
+    background-color: #333333;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+/* Темная тема - Сегменты */
+body.dark-theme .progress-card {
+    background-color: #1e1e1e;
+    border-color: #444444;
+    color: #ffffff;
+}
+
+body.dark-theme .info-section {
+    background-color: #1e1e1e;
+    border-color: #444444;
+    color: #ffffff;
+}
+
+
+body.dark-theme .footer {
+    background-color: #222222;
+    color: #bbbbbb;
+}
+/* Темная тема для тела */
+body.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Темная тема для заголовков */
+body.dark-theme .header-title,
+body.dark-theme .header-subtitle {
+    color: #ffffff;
+}
+
+/* Темная тема для услуг */
+body.dark-theme .service {
+    background-color: #1e1e1e; /* Темный фон */
+    border-color: #444444; /* Темная граница */
+    color: #ffffff; /* Белый текст */
+}
+
+/* Темная тема для текста в услугах */
+body.dark-theme .service .label {
+    color: #ffffff; /* Белый текст */
+}
+
+/* Темная тема для кружков (SVG) */
+body.dark-theme .service-info svg circle {
+    fill: #ffffff; /* Белый фон кружка */
+    stroke: #ff9800; /* Оранжевая обводка */
 }

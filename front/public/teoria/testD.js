@@ -42,11 +42,44 @@ document.addEventListener('DOMContentLoaded', function () {
         const totalQuestions = questions.length;
         const resultPercentage = Math.round((correctAnswers / totalQuestions) * 100);
 
-        // Save result in localStorage for category A
+        // Save result in localStorage for category D
         localStorage.setItem('testResult_D', resultPercentage);
 
-        // Show a message and redirect to main page
-        alert(`Twój wynik: ${resultPercentage}%. Zapisano wynik testu!`);
+        // Get the user ID or any other identifier (you need to handle user authentication separately)
+        const userId = localStorage.getItem('userId'); // Assuming the user ID is saved in localStorage
+
+        // Send result to the server (Example using fetch)
+        if (userId) {
+            const testResult = {
+                userId: userId,
+                resultPercentage: resultPercentage,
+                testName: 'Test D', // Replace with your actual test name
+            };
+
+            // Send the result to your backend API (replace 'your_api_endpoint' with the actual endpoint)
+            fetch('https://yourserver.com/api/saveTestResult', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(testResult),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert(`Twój wynik: ${resultPercentage}%. Zapisano wynik testu!`);
+                } else {
+                    alert('Wystąpił problem przy zapisywaniu wyniku.');
+                }
+            })
+            .catch(error => {
+                console.error('Error saving test result:', error);
+                alert('Wystąpił problem przy zapisywaniu wyniku.');
+            });
+        } else {
+            alert('Brak zalogowanego użytkownika.');
+        }
+
         window.location.href = 'theory.html'; // Redirect to main page
     });
 

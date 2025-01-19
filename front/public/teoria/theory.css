@@ -1,61 +1,111 @@
-/* General Reset */
-body, h1, h2, h3, ul, li, p, div, button, a {
+/* Body styling */
+body {
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.5;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
 
-/* Body styling */
-body {
-    background-color: #f7f7f7;
-    color: #333;
-    line-height: 1.5;
+ul {
+    list-style: none;
 }
 
-/* Header styling */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Статичная шапка */
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Высота шапки */
+    z-index: 1000;
+    border-bottom: 1px solid rgba(40, 40, 40, 0.60);
+    background: #F0F0F0;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 0 15px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    justify-content: space-between; /* Разделяем логотип и меню */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Логотип */
 .logo {
-    height: 50px;
-    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2px; /* Расстояние между LEO и DRIVE */
+    text-align: left;
 }
 
-.nav {
+.leo {
+    color: #FFB60A;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #FFB60A;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.drive {
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+/* Меню */
+.nav-menu {
     display: flex;
-    gap: 15px;
+    justify-content: center; /* Центрируем кнопки */
+    gap: 80px; /* Расстояние между кнопками */
+    flex: 1; /* Распределяем пространство */
 }
 
 .nav-link {
     text-decoration: none;
-    color: #333;
-    padding: 5px 10px;
-    transition: color 0.3s;
+    color: #282828; /* Основной цвет текста */
+    font-family: 'Onest', sans-serif; /* Указанный шрифт */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    transition: color 0.3s ease; /* Плавное изменение цвета */
 }
 
-.nav-link.active {
-    color: #ff9800;
+/* Стили при наведении */
+.nav-link:hover {
+    color: #FFB60A; /* Цвет при наведении */
 }
 
-.logout {
-    color: #333;
-    text-decoration: none;
-    padding: 5px 10px;
-    border: 1px solid #333;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
+/* Стили при нажатии */
+.nav-link:active {
+    color: #C56302; /* Цвет текста при нажатии */
 }
 
-.logout:hover {
-    background-color: #333;
-    color: #fff;
+/* Медиазапросы для мобильных устройств */
+@media (max-width: 768px) {
+    .header {
+        height: 70px; /* Уменьшенная высота на мобильных устройствах */
+        padding: 0 10px;
+    }
+    .leo, .drive {
+        font-size: 20px; /* Уменьшенный размер текста */
+    }
+    .nav-menu {
+        gap: 20px; /* Меньшее расстояние между кнопками */
+    }
+    .nav-link {
+        font-size: 14px; /* Уменьшенный шрифт для кнопок */
+    }
 }
 
 /* Main Content */
@@ -177,6 +227,7 @@ h2 {
     background: #282828;
     color: #fff;
     padding: 40px 20px;
+    height: 300px;
 }
 
 #complete-logo {
@@ -207,10 +258,10 @@ h2 {
     border-left: 1px solid #4B4B4B;
     margin-right: -50px;
     margin-left: -50px;
+    margin-top: 40px;
 }
 
 .footer h4,
-p,
 li {
     margin-bottom: 15px;
 }
@@ -221,7 +272,6 @@ li {
 
 /* Кнопка переключения темы */
 #themeToggle {
-    position: fixed;
     top: 100px;
     right: 20px;
     background: none;
